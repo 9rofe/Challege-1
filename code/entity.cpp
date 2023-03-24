@@ -4,7 +4,7 @@
 Entity::Entity(Vector2f coord)
 {
     m_EntityLocation = coord;
-    bool dead = false;
+    dead = false;
 }
 
 Vector2f Entity::GetLocation() const
@@ -19,9 +19,9 @@ void Entity::SetLocation(Vector2f location)
 
 
 //Player
-Player::Player(Vector2f coord) : Entity(coord)
+Player::Player(Vector2f coord, int health) : Entity(coord)
 {
-    m_Speed = WALK_SPEED;
+    m_PlayerSpeed = PLAYER_WALK_SPEED;
     m_Health = 100;
     m_Hunger = 100;
     m_Thirst = 100;
@@ -55,11 +55,11 @@ void Player::Move(Direction direction, Time dt)
 
 void Player::SetSpeed(int speed)
 {
-    m_Speed = speed;
+    m_PlayerSpeed = speed;
 }
-double Player::GetSpeed() const
+int Player::GetSpeed() const
 {
-    return m_Speed;
+    return m_PlayerSpeed;
 }
 
 void Player::SetHealth(int health)
@@ -89,8 +89,8 @@ void Player::updateThirst(int thirst)
 //Enemy
 Enemy::Enemy(Vector2f coord, int health, int speed) : Entity(coord)
 {
-    m_Health = health;
-    m_speed = speed;
+    m_EnemyHealth = health;
+    m_EnemySpeed = speed;
 }
 
 void Enemy::Move(Direction direction, Time dt)
@@ -110,19 +110,19 @@ void Enemy::Move(Direction direction, Time dt)
 
 void Enemy::SetSpeed(int speed)
 {
-    m_Speed = speed;
+    m_EnemySpeed = speed;
 }
-double Enemy::GetSpeed() const
+int Enemy::GetSpeed() const
 {
-    return m_Speed;
+    return m_EnemySpeed;
 }
 
 void Enemy::SetHealth(int health)
 {
-    m_Health = health;
+    m_EnemyHealth = health;
 }
 
 int Enemy::GetHealth() const
 {
-    return m_Health;
+    return m_EnemyHealth;
 }

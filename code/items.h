@@ -18,15 +18,16 @@
 		//snacks
 		//cups?
 
-enum Effect() {
+enum Effect {
 	NONE, HUNGRY, THIRSTY, INJURED, ENERGIZED, LOOPY, DEAD
-}
+};
 
 //constant hunger, thirst decay (only apply at 30%)
 
 //CHECK EFFECTS
+/*
 void checkEffect(Effect e) {
-	switch e
+	switch e()
 	{
 	case NONE:
 	case HUNGRY:
@@ -44,8 +45,9 @@ void checkEffect(Effect e) {
 		//random movement
 	}
 }
+*/
 
-class Light() {
+class Light {
 public:
 	Light();
 	Light(int b, int d, int w);
@@ -58,42 +60,47 @@ private:
 	bool power;
 };
 
-class Buyable() {
+class Buyable {
 public:
 	Buyable(float p);
-	float getPrice()
+	float getPrice() {
 		return price;
+	}
 protected:
 	float price;
 };
 
 
-class Consumable() {
+class Consumable {
 public:
 	Consumable(Effect e, float p);
-	Effect getEffect()
+	Effect getEffect() {
 		return effect;
-	int getPrice
+	}
+	int getPrice() {
 		return price;
+	}
 protected:
 	Effect effect;
 	float price;
-}
+};
 
-class Snack() : public Consumable {
+class Snack : public Consumable {
 public:
 	Snack(Effect e, float p, int h);
-	int getHunger()
+	int getHunger() {
 		return hunger;
+	}
 private:
 	int hunger;
 };
 
-class Drink() : public Consumable {
+class Drink : public Consumable {
 public:
 	Drink(Effect e, float p, int t);
-	int getThirst
+	int getThirst() {
 		return thirst;
+	}
 private:
 	int thirst;
 };

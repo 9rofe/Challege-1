@@ -15,30 +15,22 @@ void Engine::Input()
         {
             if (Keyboard::isKeyPressed(Keyboard::W))
             {
-                prev_Direction = playerDirection;
-                playerDirection = Direction::UP;
-                wantedDirection = Direction::UP;
+                m_PlayerDirection = Direction::UP;
                 cout << "UP" << endl;
             }
             if (Keyboard::isKeyPressed(Keyboard::S))
             {
-                prev_Direction = playerDirection;
-                playerDirection = Direction::DOWN;
-                wantedDirection = Direction::DOWN;
+                m_PlayerDirection = Direction::DOWN;
                 cout << "DOWN" << endl;
             }
             if (Keyboard::isKeyPressed(Keyboard::A))
             {
-                prev_Direction = playerDirection;
-                playerDirection = Direction::LEFT;
-                wantedDirection = Direction::LEFT;
+                m_PlayerDirection = Direction::LEFT;
                 cout << "LEFT" << endl;
             }
             if (Keyboard::isKeyPressed(Keyboard::D))
             {
-                prev_Direction = playerDirection;
-                playerDirection = Direction::RIGHT;
-                wantedDirection = Direction::RIGHT;
+                m_PlayerDirection = Direction::RIGHT;
                 cout << "RIGHT" << endl;
             }
         }

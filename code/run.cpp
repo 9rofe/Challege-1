@@ -13,7 +13,6 @@ void Engine::Run()
         //if game over
         //CheckHighScore(currentScore);
         //currentScore = 0;
+        m_Window.display();
     }
-
-    m_Window.display();
 }

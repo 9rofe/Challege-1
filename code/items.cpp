@@ -1,5 +1,6 @@
 #include "items.h"
 
+//light
 Light::Light() {
 	brightness = 0;
 	depth = 0;
@@ -25,14 +26,9 @@ void Light::powerSwitch() {
 }
 
 //buyables
-Buyables::Buyables(float p) {
+Buyable::Buyable(float p) {
 	price = p;
 }
-	float getPrice() {
-		return price;
-	}
-private:
-	float price;
 
 //consumable
 Consumable::Consumable(Effect e, float p) {
@@ -43,8 +39,9 @@ Consumable::Consumable(Effect e, float p) {
 //snack
 Snack::Snack(Effect e, float p, int h) : Consumable(e, p) {
 	hunger = h;
+}
 
 //drink
-	Drink::Drink(float p, int t, Effect e) {
+Drink::Drink(Effect e, float p, int t) : Consumable(e, p) {
 		thirst = t;
 }

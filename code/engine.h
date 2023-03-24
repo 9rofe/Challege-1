@@ -11,18 +11,25 @@
 
 #include "items.h"
 #include "entity.h"
+#include "worldMap.h"
 
 using namespace std;
 using namespace sf;
 
-class Engine() {
+class Engine {
 public:
 	Engine();
 	void Run();
 private:
+	WorldMap firstRoom;
 	void Input();
 	void Update();
 	void Draw();
-	Player* m_player;
+	Player* m_Player;
+	Vector2f resolution;
+	RenderWindow m_Window;
+	Direction m_PlayerDirection;
 	bool dead;
+	Vector2f startingPos;
+
 };
